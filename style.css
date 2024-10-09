@@ -4,47 +4,97 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: Arial, sans-serif;
   background-color: hsl(30, 38%, 92%);
-  color: #333;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Layout wrapper with 1440px max width */
 .container {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  width: 50%;
+  background-image: url("/api/placeholder/300/450");
+  background-size: cover;
+  background-position: center;
+}
+
+.content {
+  width: 50%;
+  padding: 30px;
+}
+
+h1 {
+  color: hsl(212, 21%, 14%);
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+p {
+  color: hsl(228, 12%, 48%);
+  line-height: 1.6;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.current-price {
+  color: hsl(158, 36%, 37%);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.original-price {
+  color: hsl(228, 12%, 48%);
+  text-decoration: line-through;
+}
+
+button {
+  background-color: hsl(158, 36%, 37%);
+  color: white;
+  border: none;
+  padding: 15px;
   width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-/* Main content */
-main section {
-  text-align: center;
-  padding: 20px;
+button:hover {
+  background-color: hsl(158, 36%, 20%);
 }
 
-main section h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
 
-main section p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
+  .image,
+  .content {
+    width: 100%;
+  }
 
-/* Footer styles */
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
+  .image {
+    height: 200px;
+  }
 }
 
 /* Media Queries */
