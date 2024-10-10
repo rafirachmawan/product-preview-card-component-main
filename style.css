@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box; /* Pastikan semua elemen menggunakan box-sizing border-box */
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: hsl(30, 38%, 92%);
@@ -39,6 +43,14 @@ body {
   justify-content: space-between;
 }
 
+header {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #64748b; /* Slate abu-abu */
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
 h1 {
   color: hsl(212, 21%, 14%);
   font-size: 2rem;
@@ -76,13 +88,23 @@ button {
   background-color: hsl(158, 36%, 37%);
   color: white;
   border: none;
-  padding: 15px;
+  padding: 12px;
   width: 100%;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Memberikan jarak antara ikon dan teks */
+}
+
+button::before {
+  content: url(./images/icon-cart.svg); /* Ganti dengan ikon keranjang yang kamu inginkan */
+  width: 20px;
+  height: 20px;
 }
 
 button:hover {
@@ -136,5 +158,11 @@ button:hover {
   button {
     padding: 10px;
     font-size: 0.85rem;
+    word-wrap: break-word;
+  }
+
+  button::before {
+    width: 18px;
+    height: 18px;
   }
 }
